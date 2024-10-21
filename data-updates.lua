@@ -22,8 +22,8 @@ end
 if settings.startup["palette-cleanser-enable-fluids"].value then
     -- Fix barrel recipes to use our light-oil tint
     -- They're created in base data-updates.lua so we have to fix them here, too.
-    data.raw["recipe"]["fill-light-oil-barrel"].icon_size = 32
-    data.raw["recipe"]["fill-light-oil-barrel"].icons = {
+    data.raw["recipe"]["light-oil-barrel"].icon_size = 32
+    data.raw["recipe"]["light-oil-barrel"].icons = {
         {
             icon = "__base__/graphics/icons/fluid/barreling/barrel-fill.png",
             icon_size = 32
@@ -72,7 +72,7 @@ if settings.startup["palette-cleanser-enable-fluids"].value then
     }
     data.raw["item"]["light-oil-barrel"].icons = {
         {
-            icon = data.raw["item"]["empty-barrel"].icon
+            icon = data.raw["item"]["barrel"].icon
         },
         {
             icon = "__base__/graphics/icons/fluid/barreling/barrel-side-mask.png",
@@ -83,6 +83,6 @@ if settings.startup["palette-cleanser-enable-fluids"].value then
             tint = active_scheme.light_oil_flow_color
         }
       }
-    
+
 end
 

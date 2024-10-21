@@ -26,7 +26,7 @@ if settings.startup["palette-cleanser-technology-gui"] then
     --   and saved as custom png.  Be conservative with png optimization here;
     --   this file affects ALL GUI elements in the game.
     --   Tech GUI palette: {x = 296, y = 136} to {x = 414, y = 220}
-    data.raw["gui-style"].default.default_tileset = pcgraphics.."/gui-new.png"
+--    data.raw["gui-style"].default.default_tileset = pcgraphics.."/gui-new.png"
     -- If this causes any conflicts in the future, we could rework this section
     --   to use greyscale Tech GUI squares {x, 204} with tint added.
 end
@@ -126,14 +126,14 @@ if settings.startup["palette-cleanser-enable-fluids"].value then
     }
     data.raw["recipe"]["heavy-oil-cracking"].icon_size = 32
     data.raw["recipe"]["heavy-oil-cracking"].icons = {
-        {   
+        {
             -- Use a blank base for your icon to prevent scaling problems in
             --   crafting menu, but don't make it blank - make it a small ~16px
             --   white oval with 1% alpha.  Otherwise the icon won't have that
             --   nice dark alt-mode background on assembling machines and
             --   chemical plants.
             --   (https://forums.factorio.com/viewtopic.php?f=48&t=69221&start=20#p450447)
-            
+
             icon = pcgraphics.."/icons/AlmostBlank32.png",
             icon_size = 32,
         },
@@ -198,7 +198,7 @@ if settings.startup["palette-cleanser-enable-fluids"].value then
             shift = {9,5}
         }
     }
-    
+
 end
 
 -- AMMO
@@ -207,9 +207,6 @@ if settings.startup["palette-cleanser-enable-ammo"].value then
     data.raw["ammo"]["explosive-cannon-shell"].icon_size = 32
     data.raw["ammo"]["explosive-uranium-cannon-shell"].icon = pcgraphics.."/icons/explosive-uranium-cannon-shell.png"
     data.raw["ammo"]["explosive-uranium-cannon-shell"].icon_size = 32
-    data.raw["capsule"]["cluster-grenade"].icon = pcgraphics.."/icons/cluster-grenade.png"
-    data.raw["capsule"]["cluster-grenade"].icon_size = 32
-    data.raw["projectile"]["cluster-grenade"].animation.filename = pcgraphics.."/icons/cluster-grenade.png"
 end
 
 -- CIRCUITS
@@ -224,62 +221,26 @@ end
 
 -- LOGISTICS
 if settings.startup["palette-cleanser-enable-logistics"].value then
-    data.raw["item"]["logistic-chest-active-provider"].icon = pcgraphics.."/icons/logistic-chest-active-provider.png"
-    data.raw["item"]["logistic-chest-active-provider"].icon_size = 32
-    data.raw["logistic-container"]["logistic-chest-active-provider"].icon = pcgraphics.."/icons/logistic-chest-active-provider.png"
-    data.raw["logistic-container"]["logistic-chest-active-provider"].icon_size = 32
-    data.raw["logistic-container"]["logistic-chest-active-provider"].animation.layers[1].filename =pcgraphics.."/entity/logistic-chest/logistic-chest-active-provider.png"
-    data.raw["logistic-container"]["logistic-chest-active-provider"].animation.layers[1].hr_version.filename =pcgraphics.."/entity/logistic-chest/hr-logistic-chest-active-provider.png"
+   data.raw["item"]["active-provider-chest"].icon = pcgraphics.."/icons/logistic-chest-active-provider.png"
+   data.raw["item"]["active-provider-chest"].icon_size = 32
+  data.raw["logistic-container"]["active-provider-chest"].icon = pcgraphics.."/icons/logistic-chest-active-provider.png"
+    data.raw["logistic-container"]["active-provider-chest"].icon_size = 32
+    data.raw["logistic-container"]["active-provider-chest"].animation.layers[1].filename =pcgraphics.."/entity/logistic-chest/hr-logistic-chest-active-provider.png"
 
-    data.raw["item"]["logistic-chest-requester"].icon = pcgraphics.."/icons/logistic-chest-requester.png"
-    data.raw["item"]["logistic-chest-requester"].icon_size = 32
-    data.raw["logistic-container"]["logistic-chest-requester"].icon = pcgraphics.."/icons/logistic-chest-requester.png"
-    data.raw["logistic-container"]["logistic-chest-requester"].icon_size = 32
-    data.raw["logistic-container"]["logistic-chest-requester"].animation.layers[1].filename =pcgraphics.."/entity/logistic-chest/logistic-chest-requester.png"
-    data.raw["logistic-container"]["logistic-chest-requester"].animation.layers[1].hr_version.filename =pcgraphics.."/entity/logistic-chest/hr-logistic-chest-requester.png"
+    data.raw["item"]["requester-chest"].icon = pcgraphics.."/icons/logistic-chest-requester.png"
+    data.raw["item"]["requester-chest"].icon_size = 32
+    data.raw["logistic-container"]["requester-chest"].icon = pcgraphics.."/icons/logistic-chest-requester.png"
+    data.raw["logistic-container"]["requester-chest"].icon_size = 32
+    data.raw["logistic-container"]["requester-chest"].animation.layers[1].filename =pcgraphics.."/entity/logistic-chest/hr-logistic-chest-requester.png"
 
-    data.raw["item"]["filter-inserter"].icon = pcgraphics.."/icons/filter-inserter.png"
-    data.raw["item"]["filter-inserter"].icon_size = 32
-    data.raw["inserter"]["filter-inserter"].icon = pcgraphics.."/icons/filter-inserter.png"
-    data.raw["inserter"]["filter-inserter"].icon_size = 32
-    data.raw["inserter"]["filter-inserter"].hand_base_picture.filename =pcgraphics.."/entity/filter-inserter/filter-inserter-hand-base.png"
-    data.raw["inserter"]["filter-inserter"].hand_base_picture.hr_version.filename =pcgraphics.."/entity/filter-inserter/hr-filter-inserter-hand-base.png"
-    data.raw["inserter"]["filter-inserter"].hand_closed_picture.filename =pcgraphics.."/entity/filter-inserter/filter-inserter-hand-closed.png"
-    data.raw["inserter"]["filter-inserter"].hand_closed_picture.hr_version.filename =pcgraphics.."/entity/filter-inserter/hr-filter-inserter-hand-closed.png"
-    data.raw["inserter"]["filter-inserter"].hand_open_picture.filename =pcgraphics.."/entity/filter-inserter/filter-inserter-hand-open.png"
-    data.raw["inserter"]["filter-inserter"].hand_open_picture.hr_version.filename =pcgraphics.."/entity/filter-inserter/hr-filter-inserter-hand-open.png"
-    data.raw["inserter"]["filter-inserter"].platform_picture.sheet.filename =pcgraphics.."/entity/filter-inserter/filter-inserter-platform.png"
-    data.raw["inserter"]["filter-inserter"].platform_picture.sheet.hr_version.filename =pcgraphics.."/entity/filter-inserter/hr-filter-inserter-platform.png"
-    -- Filter-inserter-remnants implementation needs further debugging.  For
-    --   now, they'll magically revert to original color when destroyed. :)
-    -- data.raw["corpse"]["filter-inserter-remnants"].animation.filename =pcgraphics.."/entity/filter-inserter/remnants/filter-inserter-remnants.png"
-    -- data.raw["corpse"]["filter-inserter-remnants"].animation.hr_version.filename =pcgraphics.."/entity/filter-inserter/remnants/hr-filter-inserter-remnants.png"
-
-    data.raw["item"]["stack-inserter"].icon = pcgraphics.."/icons/stack-inserter.png"
-    data.raw["item"]["stack-inserter"].icon_size = 32
-    data.raw["inserter"]["stack-inserter"].icon = pcgraphics.."/icons/stack-inserter.png"
-    data.raw["inserter"]["stack-inserter"].icon_size = 32
-    data.raw["inserter"]["stack-inserter"].hand_base_picture.filename =pcgraphics.."/entity/stack-inserter/stack-inserter-hand-base.png"
-    data.raw["inserter"]["stack-inserter"].hand_base_picture.hr_version.filename =pcgraphics.."/entity/stack-inserter/hr-stack-inserter-hand-base.png"
-    data.raw["inserter"]["stack-inserter"].hand_closed_picture.filename =pcgraphics.."/entity/stack-inserter/stack-inserter-hand-closed.png"
-    data.raw["inserter"]["stack-inserter"].hand_closed_picture.hr_version.filename =pcgraphics.."/entity/stack-inserter/hr-stack-inserter-hand-closed.png"
-    data.raw["inserter"]["stack-inserter"].hand_open_picture.filename =pcgraphics.."/entity/stack-inserter/stack-inserter-hand-open.png"
-    data.raw["inserter"]["stack-inserter"].hand_open_picture.hr_version.filename =pcgraphics.."/entity/stack-inserter/hr-stack-inserter-hand-open.png"
-    data.raw["inserter"]["stack-inserter"].platform_picture.sheet.filename =pcgraphics.."/entity/stack-inserter/stack-inserter-platform.png"
-    data.raw["inserter"]["stack-inserter"].platform_picture.sheet.hr_version.filename =pcgraphics.."/entity/stack-inserter/hr-stack-inserter-platform.png"
-
-    data.raw["item"]["stack-filter-inserter"].icon = pcgraphics.."/icons/stack-filter-inserter.png"
-    data.raw["item"]["stack-filter-inserter"].icon_size = 32
-    data.raw["inserter"]["stack-filter-inserter"].icon = pcgraphics.."/icons/stack-filter-inserter.png"
-    data.raw["inserter"]["stack-filter-inserter"].icon_size = 32
-    data.raw["inserter"]["stack-filter-inserter"].hand_base_picture.filename =pcgraphics.."/entity/stack-filter-inserter/stack-filter-inserter-hand-base.png"
-    data.raw["inserter"]["stack-filter-inserter"].hand_base_picture.hr_version.filename =pcgraphics.."/entity/stack-filter-inserter/hr-stack-filter-inserter-hand-base.png"
-    data.raw["inserter"]["stack-filter-inserter"].hand_closed_picture.filename =pcgraphics.."/entity/stack-filter-inserter/stack-filter-inserter-hand-closed.png"
-    data.raw["inserter"]["stack-filter-inserter"].hand_closed_picture.hr_version.filename =pcgraphics.."/entity/stack-filter-inserter/hr-stack-filter-inserter-hand-closed.png"
-    data.raw["inserter"]["stack-filter-inserter"].hand_open_picture.filename =pcgraphics.."/entity/stack-filter-inserter/stack-filter-inserter-hand-open.png"
-    data.raw["inserter"]["stack-filter-inserter"].hand_open_picture.hr_version.filename =pcgraphics.."/entity/stack-filter-inserter/hr-stack-filter-inserter-hand-open.png"
-    data.raw["inserter"]["stack-filter-inserter"].platform_picture.sheet.filename =pcgraphics.."/entity/stack-filter-inserter/stack-filter-inserter-platform.png"
-    data.raw["inserter"]["stack-filter-inserter"].platform_picture.sheet.hr_version.filename =pcgraphics.."/entity/stack-filter-inserter/hr-stack-filter-inserter-platform.png"
+    data.raw["item"]["bulk-inserter"].icon = pcgraphics.."/icons/stack-inserter.png"
+    data.raw["item"]["bulk-inserter"].icon_size = 32
+    data.raw["inserter"]["bulk-inserter"].icon = pcgraphics.."/icons/stack-inserter.png"
+    data.raw["inserter"]["bulk-inserter"].icon_size = 32
+    data.raw["inserter"]["bulk-inserter"].hand_base_picture.filename =pcgraphics.."/entity/stack-inserter/hr-stack-inserter-hand-base.png"
+    data.raw["inserter"]["bulk-inserter"].hand_closed_picture.filename =pcgraphics.."/entity/stack-inserter/hr-stack-inserter-hand-closed.png"
+    data.raw["inserter"]["bulk-inserter"].hand_open_picture.filename =pcgraphics.."/entity/stack-inserter/hr-stack-inserter-hand-open.png"
+    data.raw["inserter"]["bulk-inserter"].platform_picture.sheet.filename =pcgraphics.."/entity/stack-inserter/hr-stack-inserter-platform.png"
 
 end
 
@@ -294,16 +255,11 @@ else
 end
 
 if settings.startup["palette-cleanser-enable-thick-wires"].value then
-    -- Note: Factorio API has a misspelled word in the prototypes' wire
-    --   highlight variables: "hightlight"
-
     -- Use thicker shadows
-    data.raw["utility-sprites"].default.wire_shadow.filename = pcgraphics.."/entity/signal-wire/wire-shadow-thick.png"
-    data.raw["utility-sprites"].default.wire_shadow.hr_version.filename = pcgraphics.."/entity/signal-wire/hr-wire-shadow-thick.png"
-    
+    data.raw["utility-sprites"].default.wire_shadow.filename = pcgraphics.."/entity/signal-wire/hr-wire-shadow-thick.png"
+
     -- Change copper wire color/thickness
-    data.raw["utility-sprites"].default.copper_wire.filename = pcgraphics.."/entity/signal-wire/copper-wire-thick.png"
-    data.raw["utility-sprites"].default.copper_wire.hr_version.filename = pcgraphics.."/entity/signal-wire/hr-copper-wire-thick.png"
+    data.raw["utility-sprites"].default.copper_wire.filename = pcgraphics.."/entity/signal-wire/hr-copper-wire-thick.png"
 
     if settings.startup["palette-cleanser-signal-wire-mode"].value == choices.wire_mode.redblue then
         -- use thicker wires, and replace green with blue
@@ -313,24 +269,18 @@ if settings.startup["palette-cleanser-enable-thick-wires"].value then
         -- swap signal channel indicators in info panels
         data.raw["gui-style"].default.green_circuit_network_content_slot.default_graphical_set.position = {221, 36}
 
-        data.raw["utility-sprites"].default.red_wire.filename = pcgraphics.."/entity/signal-wire/red-wire-thick.png"
-        data.raw["utility-sprites"].default.red_wire.hr_version.filename = pcgraphics.."/entity/signal-wire/hr-red-wire-thick.png"
+        data.raw["utility-sprites"].default.red_wire.filename = pcgraphics.."/entity/signal-wire/hr-red-wire-thick.png"
         if bhighlight then
-            data.raw["utility-sprites"].default.red_wire_hightlight.filename = pcgraphics.."/entity/signal-wire/red-wire-highlight-thick.png"
-            data.raw["utility-sprites"].default.red_wire_hightlight.hr_version.filename = pcgraphics.."/entity/signal-wire/hr-red-wire-highlight-thick.png"
+            data.raw["utility-sprites"].default.red_wire_highlight.filename = pcgraphics.."/entity/signal-wire/hr-red-wire-highlight-thick.png"
         else
-            data.raw["utility-sprites"].default.red_wire_hightlight.filename = pcgraphics.."/entity/signal-wire/wire-highlight-thick.png"
-            data.raw["utility-sprites"].default.red_wire_hightlight.hr_version.filename = pcgraphics.."/entity/signal-wire/hr-wire-highlight-thick.png"
+            data.raw["utility-sprites"].default.red_wire_highlight.filename = pcgraphics.."/entity/signal-wire/hr-wire-highlight-thick.png"
         end
 
-        data.raw["utility-sprites"].default.green_wire.filename = pcgraphics.."/entity/signal-wire/blue-wire-thick.png"
-        data.raw["utility-sprites"].default.green_wire.hr_version.filename = pcgraphics.."/entity/signal-wire/hr-blue-wire-thick.png"
+        data.raw["utility-sprites"].default.green_wire.filename = pcgraphics.."/entity/signal-wire/hr-blue-wire-thick.png"
         if bhighlight then
-            data.raw["utility-sprites"].default.green_wire_hightlight.filename = pcgraphics.."/entity/signal-wire/blue-wire-highlight-thick.png"
-            data.raw["utility-sprites"].default.green_wire_hightlight.hr_version.filename = pcgraphics.."/entity/signal-wire/hr-blue-wire-highlight-thick.png"
+            data.raw["utility-sprites"].default.green_wire_highlight.filename = pcgraphics.."/entity/signal-wire/hr-blue-wire-highlight-thick.png"
         else
-            data.raw["utility-sprites"].default.green_wire_hightlight.filename = pcgraphics.."/entity/signal-wire/wire-highlight-thick.png"
-            data.raw["utility-sprites"].default.green_wire_hightlight.hr_version.filename = pcgraphics.."/entity/signal-wire/hr-wire-highlight-thick.png"
+            data.raw["utility-sprites"].default.green_wire_highlight.filename = pcgraphics.."/entity/signal-wire/hr-wire-highlight-thick.png"
         end
 
     elseif settings.startup["palette-cleanser-signal-wire-mode"].value == choices.wire_mode.bluegreen then
@@ -341,46 +291,34 @@ if settings.startup["palette-cleanser-enable-thick-wires"].value then
         -- swap signal channel indicators in info panels
         data.raw["gui-style"].default.red_circuit_network_content_slot.default_graphical_set.position = {221, 36}
 
-        data.raw["utility-sprites"].default.red_wire.filename = pcgraphics.."/entity/signal-wire/blue-wire-thick.png"
-        data.raw["utility-sprites"].default.red_wire.hr_version.filename = pcgraphics.."/entity/signal-wire/hr-blue-wire-thick.png"
+        data.raw["utility-sprites"].default.red_wire.filename = pcgraphics.."/entity/signal-wire/hr-blue-wire-thick.png"
         if bhighlight then
-            data.raw["utility-sprites"].default.red_wire_hightlight.filename = pcgraphics.."/entity/signal-wire/blue-wire-highlight-thick.png"
-            data.raw["utility-sprites"].default.red_wire_hightlight.hr_version.filename = pcgraphics.."/entity/signal-wire/hr-blue-wire-highlight-thick.png"
+            data.raw["utility-sprites"].default.red_wire_highlight.filename = pcgraphics.."/entity/signal-wire/hr-blue-wire-highlight-thick.png"
         else
-            data.raw["utility-sprites"].default.red_wire_hightlight.filename = pcgraphics.."/entity/signal-wire/wire-highlight-thick.png"
-            data.raw["utility-sprites"].default.red_wire_hightlight.hr_version.filename = pcgraphics.."/entity/signal-wire/hr-wire-highlight-thick.png"
+            data.raw["utility-sprites"].default.red_wire_highlight.filename = pcgraphics.."/entity/signal-wire/hr-wire-highlight-thick.png"
         end
 
-        data.raw["utility-sprites"].default.green_wire.filename = pcgraphics.."/entity/signal-wire/green-wire-thick.png"
-        data.raw["utility-sprites"].default.green_wire.hr_version.filename = pcgraphics.."/entity/signal-wire/hr-green-wire-thick.png"
+        data.raw["utility-sprites"].default.green_wire.filename = pcgraphics.."/entity/signal-wire/hr-green-wire-thick.png"
         if bhighlight then
-            data.raw["utility-sprites"].default.green_wire_hightlight.filename = pcgraphics.."/entity/signal-wire/green-wire-highlight-thick.png"
-            data.raw["utility-sprites"].default.green_wire_hightlight.hr_version.filename = pcgraphics.."/entity/signal-wire/hr-green-wire-highlight-thick.png"
+            data.raw["utility-sprites"].default.green_wire_highlight.filename = pcgraphics.."/entity/signal-wire/hr-green-wire-highlight-thick.png"
         else
-            data.raw["utility-sprites"].default.green_wire_hightlight.filename = pcgraphics.."/entity/signal-wire/wire-highlight-thick.png"
-            data.raw["utility-sprites"].default.green_wire_hightlight.hr_version.filename = pcgraphics.."/entity/signal-wire/hr-wire-highlight-thick.png"
+            data.raw["utility-sprites"].default.green_wire_highlight.filename = pcgraphics.."/entity/signal-wire/hr-wire-highlight-thick.png"
         end
 
     else -- redgreen
         -- use thicker wires but don't change colors
-        data.raw["utility-sprites"].default.red_wire.filename = pcgraphics.."/entity/signal-wire/red-wire-thick.png"
-        data.raw["utility-sprites"].default.red_wire.hr_version.filename = pcgraphics.."/entity/signal-wire/hr-red-wire-thick.png"    
+        data.raw["utility-sprites"].default.red_wire.filename = pcgraphics.."/entity/signal-wire/hr-red-wire-thick.png"
         if bhighlight then
-            data.raw["utility-sprites"].default.red_wire_hightlight.filename = pcgraphics.."/entity/signal-wire/red-wire-highlight-thick.png"
-            data.raw["utility-sprites"].default.red_wire_hightlight.hr_version.filename = pcgraphics.."/entity/signal-wire/hr-red-wire-highlight-thick.png"
+            data.raw["utility-sprites"].default.red_wire_highlight.filename = pcgraphics.."/entity/signal-wire/hr-red-wire-highlight-thick.png"
         else
-            data.raw["utility-sprites"].default.red_wire_hightlight.filename = pcgraphics.."/entity/signal-wire/wire-highlight-thick.png"
-            data.raw["utility-sprites"].default.red_wire_hightlight.hr_version.filename = pcgraphics.."/entity/signal-wire/hr-wire-highlight-thick.png"
+            data.raw["utility-sprites"].default.red_wire_highlight.filename = pcgraphics.."/entity/signal-wire/hr-wire-highlight-thick.png"
         end
 
-        data.raw["utility-sprites"].default.green_wire.filename = pcgraphics.."/entity/signal-wire/green-wire-thick.png"
-        data.raw["utility-sprites"].default.green_wire.hr_version.filename = pcgraphics.."/entity/signal-wire/hr-green-wire-thick.png"
+        data.raw["utility-sprites"].default.green_wire.filename = pcgraphics.."/entity/signal-wire/hr-green-wire-thick.png"
         if bhighlight then
-            data.raw["utility-sprites"].default.green_wire_hightlight.filename = pcgraphics.."/entity/signal-wire/green-wire-highlight-thick.png"
-            data.raw["utility-sprites"].default.green_wire_hightlight.hr_version.filename = pcgraphics.."/entity/signal-wire/hr-green-wire-highlight-thick.png"
+            data.raw["utility-sprites"].default.green_wire_highlight.filename = pcgraphics.."/entity/signal-wire/hr-green-wire-highlight-thick.png"
         else
-            data.raw["utility-sprites"].default.green_wire_hightlight.filename = pcgraphics.."/entity/signal-wire/wire-highlight-thick.png"
-            data.raw["utility-sprites"].default.green_wire_hightlight.hr_version.filename = pcgraphics.."/entity/signal-wire/hr-wire-highlight-thick.png"
+            data.raw["utility-sprites"].default.green_wire_highlight.filename = pcgraphics.."/entity/signal-wire/hr-wire-highlight-thick.png"
         end
 
     end
@@ -394,15 +332,12 @@ else -- don't use thicker wires
         data.raw["gui-style"].default.green_circuit_network_content_slot.default_graphical_set.position = {221, 36}
 
         if bhighlight then
-            data.raw["utility-sprites"].default.red_wire_hightlight.filename = pcgraphics.."/entity/signal-wire/red-wire-highlight.png"
-            data.raw["utility-sprites"].default.red_wire_hightlight.hr_version.filename = pcgraphics.."/entity/signal-wire/hr-red-wire-highlight.png"
+            data.raw["utility-sprites"].default.red_wire_highlight.filename = pcgraphics.."/entity/signal-wire/hr-red-wire-highlight.png"
         end
 
-        data.raw["utility-sprites"].default.green_wire.filename = pcgraphics.."/entity/signal-wire/blue-wire.png"
-        data.raw["utility-sprites"].default.green_wire.hr_version.filename = pcgraphics.."/entity/signal-wire/hr-blue-wire.png"
+        data.raw["utility-sprites"].default.green_wire.filename = pcgraphics.."/entity/signal-wire/hr-blue-wire.png"
         if bhighlight then
-            data.raw["utility-sprites"].default.green_wire_hightlight.filename = pcgraphics.."/entity/signal-wire/blue-wire-highlight.png"
-            data.raw["utility-sprites"].default.green_wire_hightlight.hr_version.filename = pcgraphics.."/entity/signal-wire/hr-blue-wire-highlight.png"
+            data.raw["utility-sprites"].default.green_wire_highlight.filename = pcgraphics.."/entity/signal-wire/hr-blue-wire-highlight.png"
         end
 
     elseif settings.startup["palette-cleanser-signal-wire-mode"].value == choices.wire_mode.bluegreen then
@@ -413,26 +348,21 @@ else -- don't use thicker wires
         -- swap signal channel indicators in info panels
         data.raw["gui-style"].default.red_circuit_network_content_slot.default_graphical_set.position = {221, 36}
 
-        data.raw["utility-sprites"].default.red_wire.filename = pcgraphics.."/entity/signal-wire/blue-wire.png"
-        data.raw["utility-sprites"].default.red_wire.hr_version.filename = pcgraphics.."/entity/signal-wire/hr-blue-wire.png"
+        data.raw["utility-sprites"].default.red_wire.filename = pcgraphics.."/entity/signal-wire/hr-blue-wire.png"
         if bhighlight then
-            data.raw["utility-sprites"].default.red_wire_hightlight.filename = pcgraphics.."/entity/signal-wire/blue-wire-highlight.png"
-            data.raw["utility-sprites"].default.red_wire_hightlight.hr_version.filename = pcgraphics.."/entity/signal-wire/hr-blue-wire-highlight.png"
+            data.raw["utility-sprites"].default.red_wire_highlight.filename = pcgraphics.."/entity/signal-wire/hr-blue-wire-highlight.png"
         end
 
         if bhighlight then
-            data.raw["utility-sprites"].default.green_wire_hightlight.filename = pcgraphics.."/entity/signal-wire/green-wire-highlight.png"
-            data.raw["utility-sprites"].default.green_wire_hightlight.hr_version.filename = pcgraphics.."/entity/signal-wire/hr-green-wire-highlight.png"
+            data.raw["utility-sprites"].default.green_wire_highlight.filename = pcgraphics.."/entity/signal-wire/hr-green-wire-highlight.png"
         end
 
     else -- redgreen
         -- don't change colors or thickness
 
         if bhighlight then
-            data.raw["utility-sprites"].default.red_wire_hightlight.filename = pcgraphics.."/entity/signal-wire/red-wire-highlight.png"
-            data.raw["utility-sprites"].default.red_wire_hightlight.hr_version.filename = pcgraphics.."/entity/signal-wire/hr-red-wire-highlight.png"
-            data.raw["utility-sprites"].default.green_wire_hightlight.filename = pcgraphics.."/entity/signal-wire/green-wire-highlight.png"
-            data.raw["utility-sprites"].default.green_wire_hightlight.hr_version.filename = pcgraphics.."/entity/signal-wire/hr-green-wire-highlight.png"
+            data.raw["utility-sprites"].default.red_wire_highlight.filename = pcgraphics.."/entity/signal-wire/hr-red-wire-highlight.png"
+            data.raw["utility-sprites"].default.green_wire_highlight.filename = pcgraphics.."/entity/signal-wire/hr-green-wire-highlight.png"
         end
 
     end
@@ -450,7 +380,7 @@ data:extend(
 			type = "custom-input",
 			name = "palette-cleanser-force-map-rechart",
 			key_sequence = "CONTROL + M",
-			consuming = "script-only"
+			consuming = "none"
 		},
 	}
 )
